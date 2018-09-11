@@ -23,7 +23,7 @@ describe('Shopvox maintest', function () {
         browser.waitForAngularEnabled(false);
         login.signin();
         // expect(browser.getTitle()).toEqual('My VOX - shopVOX');
-        expect(browser.getCurrentUrl()).toEqual('https://app.shopvox.com/app/#/dashboards/myvox');
+        // expect(browser.getCurrentUrl()).toEqual('https://app.shopvox.com/app/#/dashboards/myvox');
     });
 
     it('Create Customer', function () {

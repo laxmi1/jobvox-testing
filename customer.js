@@ -1,10 +1,10 @@
 var customer = function () {
-	
+	var methods = require('./methods.js');
     var plusCreateButton = element(by.xpath("//i[@class='fa fa-plus-circle mr-5']"));
     var newCustomerLink = element(by.css('[ui-sref="companies.new"]'));
     var name = element(by.xpath("//input[@placeholder='Name']"));
     var legalName = element(by.xpath("//input[@placeholder='Legal Name']"));
-    
+    var marketingArea = element(by.css('[name="marketingAreaId"]'));
     var primarycontact = element(by.xpath("//div[1][@class='col-sm-6']/vox-text-field/div/div/input"));
     var primarycontactemail = element(by.xpath("//input[@placeholder='E-mail']"));
     // var contactphone = element(by.xpath(".//*[@id='main-section']/div/div[2]/div/div/div[2]/div/form/div[1]/div/section[6]/div/div[3]/div[1]/div[1]/phone-field/div/div/div"));
@@ -23,6 +23,7 @@ var customer = function () {
     var website = element(by.xpath("//input[@placeholder='Website']"));
     var lisencenumber = element(by.xpath("//input[@placeholder='License Number']"));
     var tollfreenumber = element(by.xpath("//input[@placeholder='Toll Free Number']"));
+    var pricingLevel = element(by.css('[name="pricingLevelId"]'));
     var taxid = element(by.xpath("//input[@placeholder='Tax ID']"));
     var localfile = element(by.xpath("//input[@placeholder='eg /Users/joe/Acme Inc. Folder']"));
     var background = element(by.xpath("//textarea[@placeholder='Background Info']"));
@@ -43,7 +44,9 @@ var customer = function () {
         console.log('Legal Name is disabled in Customer Forms');
     	}
 		});
-        
+
+        methods.selectDropdownbyNum(marketingArea,2);
+
         primarycontact.isDisplayed().then(function (isVisible){
         if (isVisible) {
         primarycontact.sendKeys("Contact"+Date.now());    
@@ -91,6 +94,10 @@ var customer = function () {
         leadsource.click();
         element(by.xpath("//input[@placeholder='Name']")).sendKeys("leadsource"+Date.now());
         element(by.xpath("//button[@role='button']")).click();
+
+        
+
+        methods.selectDropdownbyNum(pricingLevel,2);
 
         creditlimit.isDisplayed().then(function (isVisible){
         if (isVisible) {
