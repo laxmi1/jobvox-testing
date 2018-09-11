@@ -1,15 +1,17 @@
 var customer = function () {
 	
-    var plusCreateButton = element(by.buttonText('Create'));
+    var plusCreateButton = element(by.xpath("//i[@class='fa fa-plus-circle mr-5']"));
     var newCustomerLink = element(by.css('[ui-sref="companies.new"]'));
     var name = element(by.xpath("//input[@placeholder='Name']"));
     var legalName = element(by.xpath("//input[@placeholder='Legal Name']"));
-    var industry = element(by.xpath("//div[1][@class='col-sm-3']/vox-select-field/div/select"));
+    
     var primarycontact = element(by.xpath("//div[1][@class='col-sm-6']/vox-text-field/div/div/input"));
     var primarycontactemail = element(by.xpath("//input[@placeholder='E-mail']"));
     // var contactphone = element(by.xpath(".//*[@id='main-section']/div/div[2]/div/div/div[2]/div/form/div[1]/div/section[6]/div/div[3]/div[1]/div[1]/phone-field/div/div/div"));
     var customeremail = element(by.xpath("//input[@placeholder='jsmith@acme.com']"));
     // var customerphone = element(by.xpath("//div[1][@class='col-sm-9']/phone-field/div/div/div"));
+    var industry = element(by.xpath("//button[@ng-click='showNewIndustryModal()']"));
+    var leadsource = element(by.xpath("//button[@ng-click='showNewLeadSourceModal()']"));
     var creditlimit = element(by.xpath("//input[@placeholder='Credit limit']"));
     var discount = element(by.xpath("//input[@placeholder='Discount']"));
     var vatnumber = element(by.xpath("//input[@placeholder='VAT Number']"));
@@ -42,9 +44,6 @@ var customer = function () {
     	}
 		});
         
-        industry.click();
-        industry.options[industry.selectedIndex].value=4;
-
         primarycontact.isDisplayed().then(function (isVisible){
         if (isVisible) {
         primarycontact.sendKeys("Contact"+Date.now());    
@@ -85,6 +84,14 @@ var customer = function () {
         // }    
         // });
         
+        industry.click();
+        element(by.xpath("//input[@placeholder='Name']")).sendKeys("industry"+Date.now());
+        element(by.xpath("//button[@role='button']")).click();
+
+        leadsource.click();
+        element(by.xpath("//input[@placeholder='Name']")).sendKeys("leadsource"+Date.now());
+        element(by.xpath("//button[@role='button']")).click();
+
         creditlimit.isDisplayed().then(function (isVisible){
         if (isVisible) {
         creditlimit.sendKeys("1000"); 
