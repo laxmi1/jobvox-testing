@@ -1,9 +1,11 @@
 var customer = function () {
-	var methods = require('./methods.js');
-    var plusCreateButton = element(by.xpath("//i[@class='fa fa-plus-circle mr-5']"));
+    var methods = require('./methods.js');
+    var plusCreateButton = element(by.partialButtonText('Create'));
     var newCustomerLink = element(by.css('[ui-sref="companies.new"]'));
     var name = element(by.xpath("//input[@placeholder='Name']"));
     var legalName = element(by.xpath("//input[@placeholder='Legal Name']"));
+    var tax = element(by.css('[name="salesTaxId"]'));
+    var terms = element(by.css('[name="termCodeId"]'));
     var marketingArea = element(by.css('[name="marketingAreaId"]'));
     var primarycontact = element(by.xpath("//div[1][@class='col-sm-6']/vox-text-field/div/div/input"));
     var primarycontactemail = element(by.xpath("//input[@placeholder='E-mail']"));
@@ -14,10 +16,12 @@ var customer = function () {
     var leadsource = element(by.xpath("//button[@ng-click='showNewLeadSourceModal()']"));
     var creditlimit = element(by.xpath("//input[@placeholder='Credit limit']"));
     var discount = element(by.xpath("//input[@placeholder='Discount']"));
+    var group = element(by.css('[name="groupId"]'));
     var vatnumber = element(by.xpath("//input[@placeholder='VAT Number']"));
     var moreinfo = element(by.css('[ng-click="onClick()"]'));
     var taxexemptcode = element(by.xpath("//input[@placeholder='Tax Exempt Code']"));
     var accountnumber = element(by.xpath("//input[@placeholder='Account Number']"));
+    var legacy = element(by.css('[name="legacyType"]'));
     var facebook = element(by.xpath("//input[@placeholder='Facebook']"));
     var twitter = element(by.xpath("//input[@placeholder='Twitter']"));
     var website = element(by.xpath("//input[@placeholder='Website']"));
@@ -30,23 +34,48 @@ var customer = function () {
     var otherinfo = element(by.xpath("//textarea[@placeholder='Other Info']"));
     var specialinfo = element(by.xpath("//div[@placeholder='Special Info']"));
     var save = element(by.xpath("//button[@class='submit-button button']"));
+    var specialinfook = element(by.xpath("//button[@class='button']"));
+    var CustomerName = "Customer "+Date.now();    
 
     this.create = function () {
         plusCreateButton.click();
         newCustomerLink.click();
         name.sendKeys("Customer "+Date.now());
 
-    	legalName.isDisplayed().then(function (isVisible) {
-    	if (isVisible) {
+        legalName.isDisplayed().then(function (isVisible) {
+        if (isVisible) {
         legalName.sendKeys("Legal Name ");
-    	} else {
+        } else {
         // element is not visible
         console.log('Legal Name is disabled in Customer Forms');
-    	}
-		});
+        }
+        });
+         
+        tax.isDisplayed().then(function (isVisible){
+        if (isVisible) {
+        methods.selectDropdownbyNum(tax,2);   
+        } else {
+        console.log('terms disabled in customer Forms');
+        }
+        });
+        
 
-        methods.selectDropdownbyNum(marketingArea,2);
+        terms.isDisplayed().then(function (isVisible){
+        if (isVisible) {
+        methods.selectDropdownbyNum(terms,2);    
+        } else {
+        console.log('terms disabled in customer Forms');
+        }
+        });
 
+        marketingArea.isDisplayed().then(function (isVisible){
+        if (isVisible) {
+        methods.selectDropdownbyNum(marketingArea,2);    
+        } else {
+        console.log('MarketingArea disabled in customer Forms');
+        }
+        });
+        
         primarycontact.isDisplayed().then(function (isVisible){
         if (isVisible) {
         primarycontact.sendKeys("Contact"+Date.now());    
@@ -82,7 +111,7 @@ var customer = function () {
         // customerphone.isDisplayed().then(function (isVisible){
         // if (isVisible) {
         // customerphone.sendKeys("8888888888"); 
-        // } else {
+        // } else {                                                         
         // console.log('Customer phone disabled in customer Forms');    
         // }    
         // });
@@ -97,7 +126,14 @@ var customer = function () {
 
         
 
-        methods.selectDropdownbyNum(pricingLevel,2);
+        pricingLevel.isDisplayed().then(function (isVisible){
+        if (isVisible) {
+        methods.selectDropdownbyNum(pricingLevel,2); 
+        } else {
+        console.log('pricingLevel disabled in customer Forms');    
+        }    
+        });
+        
 
         creditlimit.isDisplayed().then(function (isVisible){
         if (isVisible) {
@@ -113,6 +149,14 @@ var customer = function () {
         } else {
         console.log('Discount disabled in customer Forms');    
         }    
+        });
+
+        group.isDisplayed().then(function (isVisible){
+        if (isVisible) {
+        methods.selectDropdownbyNum(group,2);    
+        } else {
+        console.log('group disabled in customer Forms');
+        }
         });
         
         vatnumber.isDisplayed().then(function (isVisible){
@@ -137,6 +181,14 @@ var customer = function () {
         accountnumber.isDisplayed().then(function (isVisible){
         if (isVisible) {
         accountnumber.sendKeys("12345678"); 
+        } else {
+        console.log('Account Number disabled in customer Forms');    
+        }    
+        });
+
+        legacy.isDisplayed().then(function (isVisible){
+        if (isVisible) {
+        methods.selectDropdownbyNum(legacy,2);
         } else {
         console.log('Account Number disabled in customer Forms');    
         }    
@@ -223,8 +275,21 @@ var customer = function () {
         });
         save.click();
         
-        browser.sleep(1000);
+        browser.sleep(3000);
+
+        specialinfook.isDisplayed().then(function (isVisible){
+        if (isVisible) {
+        specialinfook.click();
+        } else {
+        console.log('Special info disabled in customer Forms');    
+        }    
+        });
+        browser.sleep(3000);
     };
+       this.name = function() {
+        return CustomerName;
+    };
+
 
 };
 

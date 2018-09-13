@@ -3,6 +3,7 @@ describe('Shopvox maintest', function () {
     var homePage = require('./homePage.js');
     var login = require('./login.js');
     var customer = require('./customer.js');
+    var quote = require('./quote.js');
 
     // beforeEach(function () {
     //     console.log('*************************');
@@ -32,6 +33,10 @@ describe('Shopvox maintest', function () {
 
     });
 
+    it('Create Quote', function () {
+        browser.waitForAngularEnabled(true);
+        quote.create();
 
+    });
 
 });
