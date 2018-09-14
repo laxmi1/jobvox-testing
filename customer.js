@@ -40,7 +40,7 @@ var customer = function () {
     this.create = function () {
         plusCreateButton.click();
         newCustomerLink.click();
-        name.sendKeys("Customer "+Date.now());
+        name.sendKeys(CustomerName);
 
         legalName.isDisplayed().then(function (isVisible) {
         if (isVisible) {
