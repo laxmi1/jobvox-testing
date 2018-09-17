@@ -33,7 +33,7 @@ var salesorder = function () {
         newWorkorderlink.click();
         var customerName = customer.name();
         CustomerNameDropdown.click();
-        customerSearch.sendKeys("customer");
+        customerSearch.sendKeys(customerName);
         CustomerNameSelect.click();
         browser.sleep(3000);
         title.sendKeys("Workorder"+Date.now());
@@ -46,13 +46,13 @@ var salesorder = function () {
         }
         });
 
-        customerPO.isDisplayed().then(function (isVisible){
-        if(isVisible){
-        customerPO.sendKeys("Customer-PO-1234");   
-        }else {
-        console.log('Customer PO is disabled in Sales Order Forms');    
-        }    
-        });
+        // customerPO.isDisplayed().then(function (isVisible){
+        // if(isVisible){
+        // customerPO.sendKeys("Customer-PO-1234");   
+        // }else {
+        // console.log('Customer PO is disabled in Sales Order Forms');    
+        // }    
+        // });
 
         shippingmethod.isDisplayed().then(function (isVisible){
         if(isVisible){
