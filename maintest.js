@@ -39,4 +39,10 @@ describe('Shopvox maintest', function () {
 
     });
 
+    it('Create Invoice', function () {
+        browser.waitForAngularEnabled(true);
+        invoice.create();
+
+    });
+
 });
