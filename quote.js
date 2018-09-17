@@ -178,13 +178,13 @@ var quote = function () {
         }
         });
 
-        specialinfo.isDisplayed().then(function (isVisible){
-        if(isVisible){
-        specialinfo.sendKeys("Special Info For Quote Automation");
-        }else{
-        console.log('Special Info is disabled in Quote Forms');    
-        }
-        });
+        // specialinfo.isDisplayed().then(function (isVisible){
+        // if(isVisible){
+        // specialinfo.sendKeys("Special Info For Quote Automation");
+        // }else{
+        // console.log('Special Info is disabled in Quote Forms');    
+        // }
+        // });
         
         customernote.isDisplayed().then(function (isVisible){
         if(isVisible){
@@ -197,13 +197,13 @@ var quote = function () {
         save.click();
         browser.sleep(3000);
 
-        specialinfook.isDisplayed().then(function (isVisible){
-        if (isVisible) {
-        specialinfook.click();
-        } else {
-        console.log('Special info disabled in customer Forms');    
-        }    
-        });
+        // specialinfook.isDisplayed().then(function (isVisible){
+        // if (isVisible) {
+        // specialinfook.click();
+        // } else {
+        // console.log('Special info disabled in customer Forms');    
+        // }    
+        // });
         browser.sleep(3000); 
         
         addnewitem.click();

@@ -32,7 +32,7 @@ var invoice = function () {
         newInvoicelink.click();
         var customerName = customer.name();
         CustomerNameDropdown.click();
-        customerSearch.sendKeys("customer");
+        customerSearch.sendKeys(customerName);
         CustomerNameSelect.click();
         browser.sleep(3000);
         title.sendKeys("Invoice"+Date.now());

@@ -7,7 +7,7 @@ var login = function () {
 		element(by.name("email")).sendKeys("laxmi@shopvox.com");
 		element(by.name("password")).sendKeys("test123");
         signinButton.click();
-        browser.sleep(1000);
+        browser.sleep(3000);
 
     };
 

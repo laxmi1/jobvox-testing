@@ -266,24 +266,24 @@ var customer = function () {
         }    
         });
 
-        specialinfo.isDisplayed().then(function (isVisible){
-        if (isVisible) {
-        specialinfo.sendKeys("Test Special info details of customer"); 
-        } else {
-        console.log('Special info disabled in customer Forms');    
-        }    
-        });
+        // specialinfo.isDisplayed().then(function (isVisible){
+        // if (isVisible) {
+        // specialinfo.sendKeys("Test Special info details of customer"); 
+        // } else {
+        // console.log('Special info disabled in customer Forms');    
+        // }    
+        // });
         save.click();
         
-        browser.sleep(3000);
+        // browser.sleep(3000);
 
-        specialinfook.isDisplayed().then(function (isVisible){
-        if (isVisible) {
-        specialinfook.click();
-        } else {
-        console.log('Special info disabled in customer Forms');    
-        }    
-        });
+        // specialinfook.isDisplayed().then(function (isVisible){
+        // if (isVisible) {
+        // specialinfook.click();
+        // } else {
+        // console.log('Special info disabled in customer Forms');    
+        // }    
+        // });
         browser.sleep(3000);
     };
        this.name = function() {
