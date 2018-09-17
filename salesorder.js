@@ -4,8 +4,8 @@ var salesorder = function () {
     var customer = require('./customer.js');
     var plusCreateButton = element(by.partialButtonText('Create'));
     var newWorkorderlink = element(by.css('[ui-sref="work_orders_new"]'));
-    var CustomerNameDropdown = element(by.css('[class="caret pull-right"]'));
-    var customerSearch = element(by.model('$select.search'));
+    var CustomerNameDropdown = element.all(by.css('[class="caret pull-right"]')).first();
+    var customerSearch = element.all(by.model('$select.search')).first();
     var CustomerNameSelect = element(by.css('[class="ui-select-highlight"]'));
     var title = element(by.xpath("//input[@placeholder='Title']"));
     var about = element(by.xpath("//textarea[@placeholder='About this order']"));
