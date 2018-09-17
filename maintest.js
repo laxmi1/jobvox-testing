@@ -4,6 +4,8 @@ describe('Shopvox maintest', function () {
     var login = require('./login.js');
     var customer = require('./customer.js');
     var quote = require('./quote.js');
+    var salesorder = require('./salesorder.js');
+    var invoice = require('./invoice.js');
 
     // beforeEach(function () {
     //     console.log('*************************');
@@ -36,6 +38,12 @@ describe('Shopvox maintest', function () {
     it('Create Quote', function () {
         browser.waitForAngularEnabled(true);
         quote.create();
+
+    });
+
+    it('Create Salesorder', function () {
+        browser.waitForAngularEnabled(true);
+        salesorder.create();
 
     });
 
