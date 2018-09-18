@@ -2,6 +2,7 @@ var salesorder = function () {
 
     var methods = require('./methods.js');
     var customer = require('./customer.js');
+    var lineitem = require('./lineitem.js');
     var plusCreateButton = element(by.partialButtonText('Create'));
     var newWorkorderlink = element(by.css('[ui-sref="work_orders_new"]'));
     var CustomerNameDropdown = element.all(by.css('[class="caret pull-right"]')).first();
@@ -171,12 +172,8 @@ var salesorder = function () {
         browser.sleep(3000);
 
         
-        addnewitem.click();
-        element(by.xpath("//input[@placeholder='Name']")).sendKeys("Custom Product"+Date.now());
-        element(by.xpath("//textarea[@placeholder='Internal Notes']")).sendKeys("Automation Test Internal Notes");
-        element(by.xpath("//input[@placeholder='Total price']")).sendKeys(50);
-        saveitem.click();
-        element(by.xpath("//button[@class='button ng-scope']")).click();
+    
+        lineitem.customItem();
         
         browser.sleep(2000);
     };
