@@ -13,8 +13,8 @@ var customer = function () {
     var customeremail = element(by.xpath("//input[@placeholder='jsmith@acme.com']"));
     // var customerphone = element(by.xpath("//div[1][@class='col-sm-9']/phone-field/div/div/div"));
     // var address = element(by.css('[name="addresses[0].addressType"]'));
-    var industry = element(by.xpath("//button[@ng-click='showNewIndustryModal()']"));
-    var leadsource = element(by.xpath("//button[@ng-click='showNewLeadSourceModal()']"));
+    var industry = element(by.xpath("//span[@label='Industry']//following::select"));
+    var leadsource = element(by.xpath("//span[@label='Lead source']//following::select"));
     var creditlimit = element(by.xpath("//input[@placeholder='Credit limit']"));
     var discount = element(by.xpath("//input[@placeholder='Discount']"));
     var group = element(by.css('[name="groupId"]'));
@@ -130,16 +130,14 @@ var customer = function () {
         // console.log('Customer phone disabled in customer Forms');    
         // }    
         // });
-        
-        industry.click();
-        element(by.xpath("//input[@placeholder='Name']")).sendKeys("industry"+Date.now());
-        element(by.xpath("//button[@role='button']")).click();
 
-        leadsource.click();
-        element(by.xpath("//input[@placeholder='Name']")).sendKeys("leadsource"+Date.now());
-        element(by.xpath("//button[@role='button']")).click();
-
-        
+        leadsource.isDisplayed().then(function (isVisible){
+        if (isVisible) {
+        methods.selectDropdownbyNum(leadsource,1);
+        } else {
+        console.log('leadsource disabled in customer Forms');
+        }
+        });
 
         pricingLevel.isDisplayed().then(function (isVisible){
         if (isVisible) {
@@ -148,7 +146,6 @@ var customer = function () {
         console.log('pricingLevel disabled in customer Forms');    
         }    
         });
-        
 
         creditlimit.isDisplayed().then(function (isVisible){
         if (isVisible) {
@@ -259,7 +256,7 @@ var customer = function () {
 
         localfile.isDisplayed().then(function (isVisible){
         if (isVisible) {
-        localfile.sendKeys("/home/abhinav/Desktop/Images&PDF's/1022a38856696f3f5610a2eed0ce254e--earth-video-natural-materials.jpg"); 
+        localfile.sendKeys("/home/abhinav/Desktop/Images.jpg");
         } else {
         console.log('TaxID disabled in customer Forms');    
         }    
@@ -299,7 +296,7 @@ var customer = function () {
         // console.log('Special info disabled in customer Forms');    
         // }    
         // });
-        browser.sleep(3000);
+        browser.sleep(5000);
     };
        this.name = function() {
         return CustomerName;
