@@ -12,7 +12,7 @@ var customer = function () {
     // var contactphone = element(by.xpath(".//*[@id='main-section']/div/div[2]/div/div/div[2]/div/form/div[1]/div/section[6]/div/div[3]/div[1]/div[1]/phone-field/div/div/div"));
     var customeremail = element(by.xpath("//input[@placeholder='jsmith@acme.com']"));
     // var customerphone = element(by.xpath("//div[1][@class='col-sm-9']/phone-field/div/div/div"));
-    // var address = element(by.css('[name="addresses[0].addressType"]'));
+    var address = element(by.css('[name="addresses[0].addressType"]'));
     var industry = element(by.xpath("//span[@label='Industry']//following::select"));
     var leadsource = element(by.xpath("//span[@label='Lead source']//following::select"));
     var creditlimit = element(by.xpath("//input[@placeholder='Credit limit']"));
@@ -110,17 +110,17 @@ var customer = function () {
         });
 
     
-        // methods.selectDropdownbyNum(address,2);
-        // element(by.xpath("//input[@placeholder='Address Name']")).sendKeys("Shopvox");
-        // element(by.xpath("//input[@placeholder='Attention to']")).sendKeys("201");
-        // element(by.xpath("//div[1][@class='col-sm-8']/vox-text-field/div/div/input")).sendKeys("Vox rox");
-        // element(by.xpath("//input[@placeholder='Street 1']")).sendKeys("Techvox");
-        // element(by.xpath("//input[@placeholder='Suburb']")).sendKeys("201-Suburb");
-        // // element(by.xpath('//input[@placeholder="City"]')).sendKeys("Palo Alto");
-        // element(by.xpath("//input[@placeholder='State']")).sendKeys("CA");
-        // element(by.xpath("//input[@placeholder='ZIP']")).sendKeys(94301);
-        // element(by.xpath("//input[@placeholder='Country']")).clear();
-        // element(by.xpath("//input[@placeholder='Country']")).sendKeys("USA");
+        methods.selectDropdownbyNum(address,2);
+        element(by.xpath("//input[@placeholder='Address Name']")).sendKeys("Shopvox");
+        element(by.xpath("//input[@placeholder='Attention to']")).sendKeys("201");
+        element(by.xpath("//div[1][@class='col-sm-8']/vox-text-field/div/div/input")).sendKeys("Vox rox");
+        element(by.xpath("//input[@placeholder='Street 1']")).sendKeys("Techvox");
+        element(by.xpath("//input[@placeholder='Suburb']")).sendKeys("201-Suburb");
+        element(by.xpath("//input[@placeholder='Suburb']//following::input[1]")).sendKeys("Palo Alto");
+        element(by.xpath("//input[@placeholder='State']")).sendKeys("CA");
+        element(by.xpath("//input[@placeholder='ZIP']")).sendKeys(94301);
+        element(by.xpath("//input[@placeholder='Country']")).clear();
+        element(by.xpath("//input[@placeholder='Country']")).sendKeys("USA");
         
         
         // customerphone.isDisplayed().then(function (isVisible){
