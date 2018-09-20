@@ -131,6 +131,14 @@ var customer = function () {
         // }    
         // });
 
+        industry.isDisplayed().then(function (isVisible){
+        if (isVisible) {
+        methods.selectDropdownbyNum(industry,3);
+        } else {
+        console.log('industry disabled in customer Forms');
+        }
+        });
+
         leadsource.isDisplayed().then(function (isVisible){
         if (isVisible) {
         methods.selectDropdownbyNum(leadsource,1);
@@ -138,6 +146,7 @@ var customer = function () {
         console.log('leadsource disabled in customer Forms');
         }
         });
+
 
         pricingLevel.isDisplayed().then(function (isVisible){
         if (isVisible) {

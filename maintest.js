@@ -6,6 +6,7 @@ describe('Shopvox maintest', function () {
     var quote = require('./quote.js');
     var salesorder = require('./salesorder.js');
     var invoice = require('./invoice.js');
+    var job = require('./job.js');
 
     // beforeEach(function () {
     //     console.log('*************************');
@@ -50,6 +51,12 @@ describe('Shopvox maintest', function () {
     it('Create Invoice', function () {
         browser.waitForAngularEnabled(true);
         invoice.create();
+
+    });
+
+    it('Create Job', function () {
+        browser.waitForAngularEnabled(true);
+        job.create();
 
     });
 
