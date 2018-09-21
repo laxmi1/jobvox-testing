@@ -2,12 +2,12 @@ var customer = function () {
     var methods = require('./methods.js');
     var plusCreateButton = element(by.partialButtonText('Create'));
     var newCustomerLink = element(by.css('[ui-sref="companies.new"]'));
-    var name = element(by.xpath("//input[@placeholder='Name']"));
+    var name = element.all(by.xpath("//input[@placeholder='Name']")).first();
     var legalName = element(by.xpath("//input[@placeholder='Legal Name']"));
     var tax = element(by.css('[name="salesTaxId"]'));
     var terms = element(by.css('[name="termCodeId"]'));
     var marketingArea = element(by.css('[name="marketingAreaId"]'));
-    var primarycontact = element(by.xpath("//div[1][@class='col-sm-6']/vox-text-field/div/div/input"));
+    var primarycontact = element.all(by.xpath("//div[1][@class='col-sm-6']/vox-text-field/div/div/input")).first();
     var primarycontactemail = element(by.xpath("//input[@placeholder='E-mail']"));
     // var contactphone = element(by.xpath(".//*[@id='main-section']/div/div[2]/div/div/div[2]/div/form/div[1]/div/section[6]/div/div[3]/div[1]/div[1]/phone-field/div/div/div"));
     var customeremail = element(by.xpath("//input[@placeholder='jsmith@acme.com']"));
