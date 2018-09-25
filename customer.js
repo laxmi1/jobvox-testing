@@ -13,8 +13,8 @@ var customer = function () {
     var customeremail = element(by.xpath("//input[@placeholder='jsmith@acme.com']"));
     // var customerphone = element(by.xpath("//div[1][@class='col-sm-9']/phone-field/div/div/div"));
     var address = element(by.css('[name="addresses[0].addressType"]'));
-    var industry = element(by.xpath("//span[@label='Industry']//following::select"));
-    var leadsource = element(by.xpath("//span[@label='Lead source']//following::select"));
+    var industry = element.all(by.xpath("//span[@label='Industry']//following::select")).first();
+    var leadsource = element.all(by.xpath("//span[@label='Lead source']//following::select")).first();
     var creditlimit = element(by.xpath("//input[@placeholder='Credit limit']"));
     var discount = element(by.xpath("//input[@placeholder='Discount']"));
     var group = element(by.css('[name="groupId"]'));
