@@ -11,7 +11,7 @@ var lineitem = function () {
         element(by.xpath("//textarea[@placeholder='Internal Notes']")).sendKeys("Automation Test Internal Notes");
         element(by.xpath("//input[@placeholder='Total price']")).sendKeys(50);
         saveitem.click();
-        element(by.xpath("//button[@class='button ng-scope']")).click();
+        element(by.xpath("//div[3]/a[2]")).click();
         browser.sleep(2000);
     };
 

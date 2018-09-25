@@ -3,6 +3,7 @@ var salesorder = function () {
     var methods = require('./methods.js');
     var customer = require('./customer.js');
     var lineitem = require('./lineitem.js');
+    var job = require('./job.js');
     var plusCreateButton = element(by.partialButtonText('Create'));
     var newWorkorderlink = element(by.css('[ui-sref="work_orders_new"]'));
     var CustomerNameDropdown = element.all(by.css('[class="caret pull-right"]')).first();
@@ -176,6 +177,11 @@ var salesorder = function () {
         lineitem.customItem();
         
         browser.sleep(2000);
+
+        job.create();
+
+        browser.sleep(2000);
+
     };
 
 };
