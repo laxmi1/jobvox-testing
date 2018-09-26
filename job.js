@@ -20,7 +20,11 @@ var job = function () {
     var salesrep = element(by.css('[name="salesRepId"]'));
     var shippingmethod = element(by.css('[name="shippingMethodId"]'));
     var save = element(by.xpath("//button[@class='submit-button button']"));
-    
+
+    var createjobsoli = element(by.xpath("//*[@id='main-section']/div/div[2]/div/div/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[13]/div/a"));
+    var saveandshow = element(by.xpath("//submit-button[@label='Save & Show Job']"));
+    var closeshowjob = element(by.css('[name="close"]'));
+
      this.create = function () {
         plusCreateButton.click();
         newJoblink.click();
@@ -57,7 +61,7 @@ var job = function () {
 
         qtycompleted.isDisplayed().then(function (isVisible){
         if(isVisible){
-        qtycompleted.sendKeys("33");   
+        qtycompleted.sendKeys("1");   
         }else {
         console.log('qtycompleted is disabled in Job Forms');    
         }    
@@ -131,10 +135,87 @@ var job = function () {
         save.click();
         browser.sleep(8000);
     };
-        this.name = function() {
-         return job;
-    };
 
+    this.createjobli = function() {
+
+        createjobsoli.click();
+        browser.sleep(2000);
+        qtycompleted.isDisplayed().then(function (isVisible){
+        if(isVisible){
+        qtycompleted.sendKeys("1");   
+        }else {
+        console.log('qtycompleted is disabled in Job Forms');    
+        }    
+        });
+
+        design.isDisplayed().then(function (isVisible){
+        if(isVisible){
+        design.sendKeys("Test design details");   
+        }else {
+        console.log('design is disabled in Job Forms');    
+        }    
+        });
+
+        production.isDisplayed().then(function (isVisible){
+        if(isVisible){
+        production.sendKeys("Test production details");   
+        }else {
+        console.log('production is disabled in Job Forms');    
+        }    
+        });
+
+        shipping.isDisplayed().then(function (isVisible){
+        if(isVisible){
+        shipping.sendKeys("Test shipping details");   
+        }else {
+        console.log('shipping is disabled in Job Forms');    
+        }    
+        });
+
+        install.isDisplayed().then(function (isVisible){
+        if(isVisible){
+        install.sendKeys("Test install details");   
+        }else {
+        console.log('install is disabled in Job Forms');    
+        }    
+        });
+        
+        productionmanager.isDisplayed().then(function (isVisible){
+        if(isVisible){
+        methods.selectDropdownbyNum(productionmanager,2);    
+        }else {
+        console.log('Production manager is disabled in Job Forms');    
+        }    
+        }); 
+
+        projectmanager.isDisplayed().then(function (isVisible){
+        if(isVisible){
+        methods.selectDropdownbyNum(projectmanager,2);    
+        }else {
+        console.log('Project manager is disabled in Job Forms');    
+        }    
+        }); 
+
+        salesrep.isDisplayed().then(function (isVisible){
+        if(isVisible){
+        methods.selectDropdownbyNum(salesrep,2);    
+        }else {
+        console.log('Sales rep is disabled in Job Forms');    
+        }    
+        }); 
+        
+        shippingmethod.isDisplayed().then(function (isVisible){
+        if(isVisible){
+        methods.selectDropdownbyNum(shippingmethod,2);    
+        }else {
+        console.log('Shipping Method is disabled in job Forms');    
+        }    
+        });
+            
+        saveandshow.click();
+        browser.sleep(3000);
+        closeshowjob.click();
+    };
 
 };
 

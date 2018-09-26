@@ -172,15 +172,11 @@ var salesorder = function () {
         save.click();
         browser.sleep(3000);
 
-        
-    
         lineitem.customItem();
-        
+        browser.sleep(2000);
+        job.createjobli();
         browser.sleep(2000);
 
-        job.create();
-
-        browser.sleep(2000);
 
     };
 
