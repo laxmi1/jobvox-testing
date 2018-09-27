@@ -3,6 +3,7 @@ describe('Shopvox maintest', function () {
     var homePage = require('./homePage.js');
     var login = require('./login.js');
     var customer = require('./customer.js');
+    var product = require('./product.js');
     var quote = require('./quote.js');
     var salesorder = require('./salesorder.js');
     var invoice = require('./invoice.js');
@@ -28,6 +29,12 @@ describe('Shopvox maintest', function () {
         login.signin();
         // expect(browser.getTitle()).toEqual('My VOX - shopVOX');
         // expect(browser.getCurrentUrl()).toEqual('https://app.shopvox.com/app/#/dashboards/myvox');
+    });
+
+    it('Create Product', function () {
+        browser.waitForAngularEnabled(true);
+        product.create();
+
     });
 
     it('Create Customer', function () {
