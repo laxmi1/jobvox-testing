@@ -31,11 +31,11 @@ describe('Shopvox maintest', function () {
         // expect(browser.getCurrentUrl()).toEqual('https://app.shopvox.com/app/#/dashboards/myvox');
     });
 
-    it('Create Product', function () {
-        browser.waitForAngularEnabled(true);
-        product.create();
+    // it('Create Product', function () {
+    //     browser.waitForAngularEnabled(true);
+    //     product.create();
 
-    });
+    // });
 
     it('Create Customer', function () {
         browser.waitForAngularEnabled(true);
