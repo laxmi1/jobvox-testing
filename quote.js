@@ -208,7 +208,8 @@ var quote = function () {
 
         lineitem.customItem();
         
-        browser.sleep(2000);
+        browser.sleep(3000);
+
     };
 
 };

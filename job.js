@@ -21,7 +21,7 @@ var job = function () {
     var shippingmethod = element(by.css('[name="shippingMethodId"]'));
     var save = element(by.xpath("//button[@class='submit-button button']"));
 
-    var createjobsoli = element(by.xpath("//*[@id='main-section']/div/div[2]/div/div/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[13]/div/a"));
+    var createjobsoli = element(by.xpath("//a[@ng_click='addNewLineItem()']//following::a[6]"));
     var saveandshow = element(by.xpath("//submit-button[@label='Save & Show Job']"));
     var closeshowjob = element(by.css('[name="close"]'));
 
