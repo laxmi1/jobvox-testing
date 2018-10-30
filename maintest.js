@@ -3,6 +3,7 @@ describe('Shopvox maintest', function () {
     var homePage = require('./homePage.js');
     var login = require('./login.js');
     var customer = require('./customer.js');
+    var vendor = require('./vendor.js');
     var product = require('./product.js');
     var quote = require('./quote.js');
     var salesorder = require('./salesorder.js');
@@ -40,6 +41,12 @@ describe('Shopvox maintest', function () {
     it('Create Customer', function () {
         browser.waitForAngularEnabled(true);
         customer.create();
+
+    });
+
+    it('Create Vendor', function () {
+        browser.waitForAngularEnabled(true);
+        vendor.create();
 
     });
 
