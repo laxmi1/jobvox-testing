@@ -87,7 +87,7 @@ var customer = function () {
 
         primarycontactemail.isDisplayed().then(function (isVisible){
         if (isVisible) {
-        primarycontactemail.sendKeys("abhinav@shopvox.com"); 
+        primarycontactemail.sendKeys("testing@shopvox.com");
         } else {
         console.log('Primary Contact email disabled in customer Forms');    
         }    
@@ -103,7 +103,7 @@ var customer = function () {
 
         customeremail.isDisplayed().then(function (isVisible){
         if (isVisible) {
-        customeremail.sendKeys("abhinav@techvoxinc.com"); 
+        customeremail.sendKeys("automation@techvoxinc.com");
         } else {
         console.log('Customermail disabled in customer Forms');    
         }    
@@ -114,11 +114,11 @@ var customer = function () {
         element(by.xpath("//input[@placeholder='Address Name']")).sendKeys("Shopvox");
         element(by.xpath("//input[@placeholder='Attention to']")).sendKeys("201");
         element(by.xpath("//div[1][@class='col-sm-8']/vox-text-field/div/div/input")).sendKeys("Vox rox");
-        element(by.xpath("//input[@placeholder='Street 1']")).sendKeys("Techvox");
+        element(by.xpath("//input[@placeholder='Attention to']//following::input[2]")).sendKeys("Techvox");
         element(by.xpath("//input[@placeholder='Suburb']")).sendKeys("201-Suburb");
         element(by.xpath("//input[@placeholder='Suburb']//following::input[1]")).sendKeys("Palo Alto");
-        element(by.xpath("//input[@placeholder='State']")).sendKeys("CA");
-        element(by.xpath("//input[@placeholder='ZIP']")).sendKeys(94301);
+        element(by.xpath("//input[@placeholder='Suburb']//following::input[2]")).sendKeys("CA");
+        element(by.xpath("//input[@placeholder='Suburb']//following::input[3]")).sendKeys(94301);
         element(by.xpath("//input[@placeholder='Country']")).clear();
         element(by.xpath("//input[@placeholder='Country']")).sendKeys("USA");
         
@@ -265,7 +265,7 @@ var customer = function () {
 
         localfile.isDisplayed().then(function (isVisible){
         if (isVisible) {
-        localfile.sendKeys("/home/abhinav/Desktop/Images.jpg");
+        localfile.sendKeys("/home/shopvox/Desktop/Images.jpg");
         } else {
         console.log('TaxID disabled in customer Forms');    
         }    
