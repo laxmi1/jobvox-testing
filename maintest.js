@@ -9,6 +9,7 @@ describe('Shopvox maintest', function () {
     var salesorder = require('./salesorder.js');
     var invoice = require('./invoice.js');
     var job = require('./job.js');
+    var saleslead = require('./saleslead.js');
 
     // beforeEach(function () {
     //     console.log('*************************');
@@ -71,6 +72,12 @@ describe('Shopvox maintest', function () {
     it('Create Job', function () {
         browser.waitForAngularEnabled(true);
         job.create();
+
+    });
+
+    it('Create Saleslead', function () {
+        browser.waitForAngularEnabled(true);
+        saleslead.create();
 
     });
 
