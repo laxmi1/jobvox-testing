@@ -175,10 +175,10 @@ var salesorder = function () {
         
     
         lineitem.customItem();
-        browser.sleep(2000);
+        browser.sleep(3000);
 
         job.createjobli();
-        browser.sleep(2000);
+        browser.sleep(3000);
 
     };
 

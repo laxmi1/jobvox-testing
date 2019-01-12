@@ -3,13 +3,13 @@ describe('Shopvox maintest', function () {
     var homePage = require('./homePage.js');
     var login = require('./login.js');
     var customer = require('./customer.js');
-    var vendor = require('./vendor.js');
-    var product = require('./product.js');
     var quote = require('./quote.js');
     var salesorder = require('./salesorder.js');
     var invoice = require('./invoice.js');
     var job = require('./job.js');
     var saleslead = require('./saleslead.js');
+    var vendor = require('./vendor.js');
+    var product = require('./product.js');
 
     // beforeEach(function () {
     //     console.log('*************************');
@@ -33,11 +33,6 @@ describe('Shopvox maintest', function () {
         // expect(browser.getCurrentUrl()).toEqual('https://app.shopvox.com/app/#/dashboards/myvox');
     });
 
-    // it('Create Product', function () {
-    //     browser.waitForAngularEnabled(true);
-    //     product.create();
-
-    // });
 
     it('Create Customer', function () {
         browser.waitForAngularEnabled(true);
@@ -45,11 +40,6 @@ describe('Shopvox maintest', function () {
 
     });
 
-    it('Create Vendor', function () {
-        browser.waitForAngularEnabled(true);
-        vendor.create();
-
-    });
 
     it('Create Quote', function () {
         browser.waitForAngularEnabled(true);
@@ -78,6 +68,18 @@ describe('Shopvox maintest', function () {
     it('Create Saleslead', function () {
         browser.waitForAngularEnabled(true);
         saleslead.create();
+
+    });
+
+    it('Create Vendor', function () {
+        browser.waitForAngularEnabled(true);
+        vendor.create();
+
+    });
+
+    it('Create Product', function () {
+        browser.waitForAngularEnabled(true);
+        product.create();
 
     });
 

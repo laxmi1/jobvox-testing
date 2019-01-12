@@ -23,7 +23,7 @@ var job = function () {
 
     var createjobsoli = element(by.xpath("//a[@ng_click='addNewLineItem()']//following::a[6]"));
     var saveandshow = element(by.xpath("//submit-button[@label='Save & Show Job']"));
-    var closeshowjob = element(by.css('[name="close"]'));
+    var closeshowjob = element(by.xpath("//i[@name='close']"));
 
      this.create = function () {
         plusCreateButton.click();

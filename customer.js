@@ -1,13 +1,10 @@
 var customer = function () {
     var methods = require('./methods.js');
     // var plusCreateButton = element(by.partialButtonText('Create'));
-    // var newCustomerLink = element(by.css('[ui-sref="companies.new"]'));
-    var CustomersAndVendors = element(by.xpath("//span[contains(text(),'Customers & Vendors')]"));
-    var Customers = element(by.xpath("//a[contains(text(),'Customers')]"));
-    var Actions =element(by.xpath("//div[@class='dropdown']//button[@type='button']"));
-    var NewCustomer =element(by.xpath("//div[@class='actions']//ul[@class='dropdown-menu']//li[1]//a[1]"));
-    var name = element.all(by.xpath("//input[@placeholder='Name']")).first();
-    var legalName = element(by.xpath("//input[@placeholder='Legal Name']"));
+    var plusCreateButton = element(by.css('[name="plus-circle mr-5"]'));
+    var newCustomerLink = element(by.css('[ui-sref="companies.new"]'));
+    var name = element.all(by.xpath("//input[@placeholder='Name']"));
+    var legalName = element.all(by.xpath("//input[@placeholder='Legal Name']"));
     var tax = element.all(by.css('[name="salesTaxId"]'));
     var terms = element.all(by.css('[name="termCodeId"]'));
     var marketingArea = element.all(by.css('[name="marketingAreaId"]'));
@@ -44,13 +41,11 @@ var customer = function () {
 
     this.create = function () {
         // plusCreateButton.click();
+        browser.actions().mouseMove(plusCreateButton).click().perform();
+        browser.actions().mouseMove(newCustomerLink).click().perform();
         // newCustomerLink.click();
-        CustomersAndVendors.click();
-        Customers.click();
-        Actions.click();
-        NewCustomer.click();
-        name.sendKeys(CustomerName);
 
+        name.sendKeys(CustomerName);
         legalName.isDisplayed().then(function (isVisible) {
         if (isVisible) {
         legalName.sendKeys("Legal Name ");
