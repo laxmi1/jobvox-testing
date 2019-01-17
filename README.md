@@ -37,6 +37,21 @@ Now run the test with:
 ```
 protractor conf.js
 ```
-You should see a Chrome browser window open up and navigate to the todo list in the AngularJS page, then close itself (this should be very fast!).
-Congratulations, you've run your first Protractor test!
+By default it will run headless mode, you can see the output like below in the terminal 
+```
+laxmikanth@laxmikanth:~/work/jobvox-testing (master)$protractor conf.js 
+[10:14:33] I/launcher - Running 1 instances of WebDriver
+[10:14:33] I/local - Starting selenium standalone server...
+[10:14:34] I/local - Selenium standalone server started at http://192.168.1.42:49291/wd/hub
+Started
+.........
 
+
+9 specs, 0 failures
+Finished in 275.374 seconds
+
+[10:19:14] I/local - Shutting down selenium standalone server.
+[10:19:14] I/launcher - 0 instance(s) of WebDriver still running
+[10:19:14] I/launcher - firefox #01 passed
+```
+you can also get output file here jobvox-testing/JasmineRports/firefox-test-report.html
