@@ -77,10 +77,10 @@ describe('Shopvox maintest', function () {
 
     });
 
-    it('Create Product', function () {
-        browser.waitForAngularEnabled(true);
-        product.create();
+    // it('Create Product', function () {
+    //     browser.waitForAngularEnabled(true);
+    //     product.create();
 
-    });
+    // });
 
 });
