@@ -119,13 +119,13 @@ var invoice = function () {
         }    
         }); 
 
-        customerPO.isDisplayed().then(function (isVisible){
-        if(isVisible){
-        customerPO.sendKeys("Customer-PO-1234");   
-        }else {
-        console.log('Customer PO is disabled in Invoice Forms');    
-        }    
-        });
+        // customerPO.isDisplayed().then(function (isVisible){
+        // if(isVisible){
+        // customerPO.sendKeys("Customer-PO-1234");
+        // }else {
+        // console.log('Customer PO is disabled in Invoice Forms');
+        // }
+        // });
 
 
         shippingtracking.isDisplayed().then(function (isVisible){

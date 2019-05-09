@@ -123,21 +123,21 @@ var quote = function () {
         }    
         }); 
 
-        customerPO.isDisplayed().then(function (isVisible){
-        if(isVisible){
-        customerPO.sendKeys("Customer-PO-1234");   
-        }else {
-        console.log('Customer PO is disabled in Quote Forms');    
-        }    
-        }); 
+        // customerPO.isDisplayed().then(function (isVisible){
+        // if(isVisible){
+        // customerPO.sendKeys("Customer-PO-1234");
+        // }else {
+        // console.log('Customer PO is disabled in Quote Forms');
+        // }
+        // });
 
         closingpotential.isDisplayed().then(function (isVisible){
         if(isVisible){
         methods.selectDropdownbyNum(closingpotential,2);    
         }else {
         console.log('Closing Potential disabled in Quote Forms');    
-        }    
-        }); 
+        }
+        });
 
         shippingtracking.isDisplayed().then(function (isVisible){
         if(isVisible){

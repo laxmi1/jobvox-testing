@@ -202,13 +202,13 @@ var customer = function () {
         });
 
       
-        accountnumber.isDisplayed().then(function (isVisible){
-        if (isVisible) {
-        accountnumber.sendKeys("12345678"); 
-        } else {
-        console.log('Account Number disabled in customer Forms');    
-        }    
-        });
+        // accountnumber.isDisplayed().then(function (isVisible){
+        // if (isVisible) {
+        // accountnumber.sendKeys("12345678");
+        // } else {
+        // console.log('Account Number disabled in customer Forms');
+        // }
+        // });
 
         legacy.isDisplayed().then(function (isVisible){
         if (isVisible) {
