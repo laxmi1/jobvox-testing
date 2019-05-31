@@ -11,7 +11,6 @@ var purchaseorder = function () {
     var VendorrNameSelect = element.all(by.css('[class="ui-select-highlight"]'));
     var paymentmethod = element(by.css('[name="paymentMethodId"]'));
     var termcode = element(by.css('[name="termCodeId"]'));
-    var tax = element(by.css('[name="salesTaxId"]'));
     var shippingmethod = element(by.css('[name="shippingMethodId"]'));
     var save = element(by.xpath("//button[@role='button']"));
      this.create = function () {0
@@ -28,25 +27,13 @@ var purchaseorder = function () {
         paymentmethod.isDisplayed().then(function (isVisible){
         if(isVisible){
         methods.selectDropdownbyNum(paymentmethod,2);    
-        }else {
-        console.log('Payment Method is disabled in purchaseorder Forms');    
-        }    
+        }
         });
 
         termcode.isDisplayed().then(function (isVisible){
         if(isVisible){
         methods.selectDropdownbyNum(termcode,2);    
-        }else {
-        console.log('Term code is disabled in Quote Forms');    
-        }    
-        });
-
-        tax.isDisplayed().then(function (isVisible){
-        if(isVisible){
-        methods.selectDropdownbyNum(tax,2);    
-        }else {
-        console.log('Tax is disabled in purchaseorder Forms');    
-        }    
+        }
         });
 
         var vendorName = vendor.name();
@@ -58,8 +45,6 @@ var purchaseorder = function () {
         shippingmethod.isDisplayed().then(function (isVisible){
         if(isVisible){
         methods.selectDropdownbyNum(shippingmethod,2);    
-        }else {
-        console.log('Shipping Method is disabled in purchaseorder Forms');    
         }    
         });
         

@@ -4,7 +4,6 @@ var vendor = function () {
     var newVendorLink = element(by.css('[ui-sref="vendors.new"]'));
     var name = element.all(by.xpath("//input[@placeholder='Name']")).first();
     var legalName = element.all(by.xpath("//input[@placeholder='Legal name']")).first();
-    var category = element.all(by.xpath("//span[@label='Category']//following::select")).first();
     var licensenumber = element(by.xpath("//input[@placeholder='License #']"));
     var taxid = element(by.xpath("//input[@placeholder='Vendor tax']"));
     var terms = element(by.css('[name="termCodeId"]'));
@@ -26,12 +25,6 @@ var vendor = function () {
         legalName.isDisplayed().then(function (isVisible) {
         if (isVisible) {
         legalName.sendKeys("Legal Name for vendor ");
-        }
-        });
-         
-        category.isDisplayed().then(function (isVisible){
-        if (isVisible) {
-        methods.selectDropdownbyNum(category,3);   
         }
         });
 
