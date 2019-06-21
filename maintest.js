@@ -10,6 +10,7 @@ describe('Shopvox maintest', function () {
     var saleslead = require('./saleslead.js');
     var vendor = require('./vendor.js');
     var purchaseorder = require('./purchaseorder.js');
+    //var project = require('./project.js');
     var product = require('./product.js');
 
     // beforeEach(function () {
@@ -84,10 +85,16 @@ describe('Shopvox maintest', function () {
 
     });
 
-    // it('Create Product', function () {
+    // it('Create Project', function () {
     //     browser.waitForAngularEnabled(true);
-    //     product.create();
+    //     project.create();
 
     // });
+
+    it('Create Product', function () {
+        browser.waitForAngularEnabled(true);
+        product.create();
+
+    });
 
 });
