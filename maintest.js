@@ -12,6 +12,7 @@ describe('Shopvox maintest', function () {
     var purchaseorder = require('./purchaseorder.js');
     //var project = require('./project.js');
     var product = require('./product.js');
+    // var materialreq = require('./materialreq.js');
 
     // beforeEach(function () {
     //     console.log('*************************');
@@ -96,5 +97,11 @@ describe('Shopvox maintest', function () {
         product.create();
 
     });
+
+    //  it('Create Materialreq', function () {
+    //     browser.waitForAngularEnabled(true);
+    //     materialreq.create();
+
+    // });
 
 });
