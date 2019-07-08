@@ -8,7 +8,7 @@ var saleslead = function () {
     var details = element(by.xpath("//textarea[@placeholder='Details']"));
     var CustomerNameDropdown = element.all(by.css('[class="caret pull-right"]')).first();
     var customerSearch = element.all(by.model('$select.search')).first();
-    var CustomerNameSelect = element(by.css('[class="ui-select-highlight"]'));
+    var CustomerNameSelect = element.all(by.css('[class="ui-select-highlight"]'));
     var salesrep = element(by.xpath("//select[@name='salesRepId']"));
     var assignedto = element(by.css('[name="assignedToId"]'));
     var projectmanager = element(by.css('[name="projectManagerId"]'));

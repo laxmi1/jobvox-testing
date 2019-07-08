@@ -8,7 +8,7 @@ var salesorder = function () {
     var newWorkorderlink = element(by.css('[ui-sref="work_orders_new"]'));
     var CustomerNameDropdown = element.all(by.css('[class="caret pull-right"]')).first();
     var customerSearch = element.all(by.model('$select.search')).first();
-    var CustomerNameSelect = element(by.css('[class="ui-select-highlight"]'));
+    var CustomerNameSelect = element.all(by.css('[class="ui-select-highlight"]'));
     var title = element(by.xpath("//input[@placeholder='Title']"));
     var about = element(by.xpath("//textarea[@placeholder='About this order']"));
     var customerPO = element(by.xpath("//input[@placeholder='Customer PO']"));
@@ -174,11 +174,11 @@ var salesorder = function () {
 
         
     
-        lineitem.customItem();
-        browser.sleep(3000);
+        // lineitem.customItem();
+        // browser.sleep(3000);
 
-        job.createjobli();
-        browser.sleep(3000);
+        // job.createjobli();
+        // browser.sleep(3000);
 
     };
 

@@ -7,7 +7,7 @@ var invoice = function () {
     var newInvoicelink = element(by.css('[ui-sref="invoices_new"]'));
     var CustomerNameDropdown = element.all(by.css('[class="caret pull-right"]')).first();
     var customerSearch = element.all(by.model('$select.search')).first();
-    var CustomerNameSelect = element(by.css('[class="ui-select-highlight"]'));
+    var CustomerNameSelect = element.all(by.css('[class="ui-select-highlight"]'));
     var title = element(by.xpath("//input[@placeholder='Title']"));
     var about = element(by.xpath("//textarea[@placeholder='About this invoice']"));
     var shippingmethod = element(by.css('[name="shippingMethodId"]'));
@@ -166,9 +166,9 @@ var invoice = function () {
 
         
 
-        lineitem.customItem();
+        // lineitem.customItem();
         
-        browser.sleep(2000);
+        // browser.sleep(2000);
     };
 
 };

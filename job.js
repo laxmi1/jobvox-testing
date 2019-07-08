@@ -6,7 +6,7 @@ var job = function () {
     var newJoblink = element(by.xpath("//a[@ui-sref='jobs_new']"));   
     var CustomerNameDropdown = element.all(by.css('[class="caret pull-right"]')).first();
     var customerSearch=element.all(by.xpath("//input[@placeholder='Select customer...']")).first();
-    var CustomerNameSelect = element(by.css('[class="ui-select-highlight"]'));    
+    var CustomerNameSelect = element.all(by.css('[class="ui-select-highlight"]'));
     var name = element(by.xpath("//input[@placeholder='Name']"));    
     var description = element(by.xpath("//textarea[@placeholder='Description']"));    
     var quantity = element(by.xpath("//input[@placeholder='Quantity']"));

@@ -7,7 +7,7 @@ var quote = function () {
     var newQuotelink = element(by.css('[ui-sref="quotes_new"]'));
     var CustomerNameDropdown = element.all(by.css('[class="caret pull-right"]')).first();
     var customerSearch = element.all(by.model('$select.search')).first();
-    var CustomerNameSelect = element(by.css('[class="ui-select-highlight"]'));
+    var CustomerNameSelect = element.all(by.css('[class="ui-select-highlight"]'));
     var title = element(by.xpath("//input[@placeholder='Title']"));
     var about = element(by.xpath("//textarea[@placeholder='About this quote']"));
     var shippingmethod = element(by.css('[name="shippingMethodId"]'));
@@ -206,7 +206,7 @@ var quote = function () {
         // }    
         // });
 
-        lineitem.customItem();
+        // lineitem.customItem();
         
         browser.sleep(3000);
 
